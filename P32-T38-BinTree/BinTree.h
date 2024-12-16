@@ -32,15 +32,17 @@ public:
 		else {
 			//1 Пошук місця
 			Node<U>* p = root;
+			Node<U>* pPrev = root;
 			while (p != nullptr) {
 				/*if (value < p->info) p = p->left;
 				else p = p->right;*/
-
+				pPrev = p;
 				p = (value < p->info) ? p->left : p->right;
 			}
 
-
-
+			//2 Прив'язка вузла
+			if (value < pPrev->info) pPrev->left = el;
+			else pPrev->right = el;
 		}
 	}
 
