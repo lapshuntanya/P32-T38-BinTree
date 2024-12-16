@@ -28,9 +28,20 @@ class BinTree {
 			showSubTree(p->right);
 		}
 	}
+	void delSub(Node<U>* p) {
+		if (p != nullptr) {
+			delSub(p->left);
+			delSub(p->right);
+			cout << "delete: " << p->info << endl;
+			delete p;
+		}
+	}
 public:
 	BinTree() { root = nullptr; }
-	~BinTree() {}
+	~BinTree() {
+		delSub(root);
+		root = nullptr;
+	}
 
 	void insert(U value) {
 		Node<U>* el = new Node<U>(value);

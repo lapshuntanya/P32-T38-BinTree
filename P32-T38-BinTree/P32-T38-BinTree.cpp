@@ -16,8 +16,10 @@ int main()
 		cout << "Not found!\n";
 	else item->showNode();
 
+	cout << "-------------------------------\n";
+	bin.showTree();
+	cout << "\n-------------------------------\n";
+ 
 
-
-	system("pause");
 }
 
