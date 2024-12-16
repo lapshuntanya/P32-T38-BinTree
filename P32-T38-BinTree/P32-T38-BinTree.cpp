@@ -11,10 +11,12 @@ int main()
 	bin.insert(10);
 	bin.insert(28);
 
-	auto item = bin.search(8);
+	auto item = bin.search(-8);
 	if (item == nullptr)
 		cout << "Not found!\n";
 	else item->showNode();
+
+
 
 	system("pause");
 }
